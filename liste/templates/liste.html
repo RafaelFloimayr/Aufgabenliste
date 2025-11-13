@@ -111,8 +111,8 @@
                 <span class="item-col id"> #{{ item.id }}</span>
                 <span class="item-col name"> <strong>{{ item.item_name }}</strong> </span>
                 <span class="item-col status {% if item.item_done %}done{% else %}not-done{% endif %}">
-				<input type="checkbox" {% if item.item_done %} checked {% endif %} id="todo{{ item.id }}" onchange="toggle_item_done({{ item.id }}, this.checked)">
-				<label for="todo{{ item.id }}">{% if item.item_done %}Erledigt{% else %}Offen{% endif %}</label>
+                <input type="checkbox" {% if item.item_done %} checked {% endif %} id="todo{{ item.id }}" onchange="toggle_item_done({{ item.id }}, this.checked)">
+                <label for="todo{{ item.id }}">{% if item.item_done %}Erledigt{% else %}Offen{% endif %}</label>
                 </span>
                 <span class="item-col action"> <button onclick="deleteItem({{ item.id }})">🗑️</button> </span>
             </li>
@@ -170,3 +170,4 @@
     </script>
 </body>
 </html>
+
