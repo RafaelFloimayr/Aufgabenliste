@@ -11,17 +11,14 @@ A lightweight TODO list web application developed with Django, designed to demon
 
 1. **Clone the repository**
    ```
-   git clone https://github.com/RafaelFloimayr/Aufgabenliste.git
-   
+   git clone https://github.com/RafaelFloimayr/Aufgabenliste.git     
    cd Aufgabenliste
 
 2. Create a virtual environment (recommended)
    
    ```
-   python -m venv venv
-
-   source venv/bin/activate   # Linux/Mac
-   
+   python -m venv venv  
+   source venv/bin/activate   # Linux/Mac     
    venv\Scripts\activate      # Windows
 
 3. Install Django
