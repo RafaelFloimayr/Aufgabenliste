@@ -15,29 +15,29 @@ A lightweight TODO list web application developed with Django, designed to demon
    git clone https://github.com/RafaelFloimayr/Aufgabenliste.git     
    cd Aufgabenliste
 
-2. Create a virtual environment (recommended)
+2. **Create a virtual environment (recommended)**
    
    ```
    python -m venv venv  
    source venv/bin/activate   # Linux/Mac     
    venv\Scripts\activate      # Windows
 
-3. Install Django
+3. **Install Django**
    
    ```
    pip install django
 
-4. Apply migrations - This will set up the database tables:
+4. **Apply migrations - This will set up the database tables:**
    
    ```
    python manage.py migrate
 
-5. Start the webserver
+5. **Start the webserver**
     
    ```
    python manage.py runserver
 
-6. Access the website
+6. **Access the website**
 Open http://localhost:8000/ in your web browser and manage your tasks.
 
 Additional notes
