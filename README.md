@@ -26,7 +26,7 @@ A lightweight TODO list web application developed with Django, designed to demon
    ```
    pip install django
 
-5. Apply migrations - This will set up the database tables:
+4. Apply migrations - This will set up the database tables:
    
    ```
    python manage.py migrate
@@ -36,8 +36,9 @@ A lightweight TODO list web application developed with Django, designed to demon
    ```
    python manage.py runserver
 
-7. Access the website
-Open http://localhost:8000/ in your web browser.
+6. Access the website
+Open http://localhost:8000/ in your web browser and manage your tasks.
+<img width="972" height="304" alt="Task1_Task2" src="https://github.com/user-attachments/assets/3c3922d8-bc8a-46be-b07b-961b037a8c19" />
 
 Additional notes
     Run `python manage.py createsuperuser` to create an admin account and access the Django Admin interface.  
