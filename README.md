@@ -41,6 +41,7 @@ Open http://localhost:8000/ in your web browser and manage your tasks.
    
 Open http://localhost:8000/tasks/ in your web browser to view your tasks. Using the browsable REST API interface, you can perform GET and POST requests directly.
 <img width="1178" height="780" alt="DjangoRestFramework" src="https://github.com/user-attachments/assets/678a9d85-77fc-4b98-a4c6-cfe2ab351456" />
+To perform DELETE and PUT requests, append the task number to the URL, e.g. http://localhost:8000/tasks/1.
 
 ## Additional notes
 Run `python manage.py createsuperuser` to create an admin account and access the Django Admin interface.  
