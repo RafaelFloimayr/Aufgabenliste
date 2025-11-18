@@ -1,7 +1,8 @@
 # Task List (GER: Aufgabenliste)
 
 A lightweight TODO list web application developed with Django, designed to demonstrate the framework’s core features.
-<img width="972" height="304" alt="Task1_Task2" src="https://github.com/user-attachments/assets/3c3922d8-bc8a-46be-b07b-961b037a8c19" />
+<img width="987" height="247" alt="Task1_Task2" src="https://github.com/user-attachments/assets/e3483f25-bb97-4538-ba10-61e2000146d5" />
+
 
 ## Prerequisites
 
@@ -33,12 +34,15 @@ A lightweight TODO list web application developed with Django, designed to demon
    ```
    python manage.py runserver
 6. **Access the website**
+   
 Open http://localhost:8000/ in your web browser and manage your tasks.
 
 7. **Django REST framework**
-Open http://localhost:8000/tasks/ in your web browser to view your tasks. Using the browsable REST API interface, you can perform GET, POST, PUT, and DELETE requests directly.
+   
+Open http://localhost:8000/tasks/ in your web browser to view your tasks. Using the browsable REST API interface, you can perform GET and POST requests directly.
+<img width="1178" height="780" alt="DjangoRestFramework" src="https://github.com/user-attachments/assets/678a9d85-77fc-4b98-a4c6-cfe2ab351456" />
 
-Additional notes
-    Run `python manage.py createsuperuser` to create an admin account and access the Django Admin interface.  
-    Use `python manage.py makemigrations` to prepare new database changes.  
-    After making model changes, run `python manage.py migrate` again to apply them.
+## Additional notes
+Run `python manage.py createsuperuser` to create an admin account and access the Django Admin interface.  
+Use `python manage.py makemigrations` to prepare new database changes.  
+After making model changes, run `python manage.py migrate` again to apply them.
