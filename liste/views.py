@@ -1,7 +1,11 @@
 from django.db import transaction
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.http import JsonResponse
+from rest_framework import viewsets
 from .models import ListItem
 from .forms import ListItemForm
+from .serializers import ListItemSerializer
+
 
 def show_list(request):
     if request.method == 'POST':
@@ -32,3 +36,7 @@ def toggle_item(request, item_id):
             item.save()
         return HttpResponse(status=204)
     return HttpResponseNotAllowed(['POST'])
+
+class ListItemViewSet(viewsets.ModelViewSet):
+    queryset = ListItem.objects.all()
+    serializer_class = ListItemSerializer

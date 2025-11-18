@@ -35,6 +35,9 @@ A lightweight TODO list web application developed with Django, designed to demon
 6. **Access the website**
 Open http://localhost:8000/ in your web browser and manage your tasks.
 
+7. Django REST framework
+Open http://localhost:8000/tasks/ in your web browser to view your tasks. Using the browsable REST API interface, you can perform GET, POST, PUT, and DELETE requests directly.
+
 Additional notes
     Run `python manage.py createsuperuser` to create an admin account and access the Django Admin interface.  
     Use `python manage.py makemigrations` to prepare new database changes.  
