@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Meine Aufgabenliste</title>
+    <link rel="stylesheet" href="{% static 'liste/style.css' %}">
+
+</head>
+<body>
+    <h1>📝 Aufgabenliste</h1>
+    <div class=layout>
+     <div class=column>
+      <ul>
+        {% for item in items %}
+            <li id="item-{{ item.id }}" class="item-row">
+                <span class="item-col id"> #{{ item.id }}</span>
+                <span class="item-col name"> <strong>{{ item.item_name }}</strong> </span>
+                <span class="item-col status {% if item.item_done %}done{% else %}not-done{% endif %}">
+                <input type="checkbox" {% if item.item_done %} checked {% endif %} id="todo{{ item.id }}" onchange="toggle_item_done({{ item.id }}, this.checked)">
+                <label for="todo{{ item.id }}">{% if item.item_done %}Erledigt{% else %}Offen{% endif %}</label>
+                </span>
+                <span class="item-col action"> <button onclick="deleteItem({{ item.id }})">🗑️</button> </span>
+            </li>
+        {% empty %}
+            <li>Keine Einträge vorhanden.</li>
+        {% endfor %}
+      </ul>
+     </div>
+     <div class=column>
+       <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Hinzufügen</button>
+       </form>
+     </div>
+    </div>
+    <script>
+    function getCSRFToken() {
+        return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    }
+    
+    function deleteItem(itemId) {
+      fetch(`/delete/${itemId}/`, {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': getCSRFToken(),
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById(`item-${itemId}`).remove();
+        } else {
+          alert('Fehler beim Löschen');
+        }
+      });
+    }
+    
+    function toggle_item_done(itemId, itemDone){
+        fetch(`/toggle/${itemId}/`, {
+        method: "POST",
+        headers: {
+         "Content-Type": "application/json",
+          "X-CSRFToken": getCSRFToken("csrftoken")
+        },
+        body: JSON.stringify({ item_done: itemDone })
+        })
+        .then(response => {
+          if (response.status === 204) {
+            location.reload();
+          }
+        })
+    }
+   
+    </script>
+</body>
+</html>
+

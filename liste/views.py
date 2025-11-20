@@ -17,7 +17,7 @@ def show_list(request):
         form = ListItemForm()
 
     items = ListItem.objects.all()
-    return render(request, 'liste.html', {'items': items, 'form': form})
+    return render(request, 'liste/liste.html', {'items': items, 'form': form})
 
 def delete_item(request, item_id):
     if request.method == 'POST':
